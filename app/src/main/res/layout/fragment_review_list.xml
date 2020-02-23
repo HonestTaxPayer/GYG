@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/tour_padding">
+    android:padding="@dimen/large_padding">
 
     <TextView
         android:id="@+id/tour_title"
@@ -19,7 +19,7 @@
         style="@style/InfoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/review_item_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:justificationMode="inter_word"
         android:text="@string/tour_demo_abstract"
         app:layout_constraintTop_toBottomOf="@+id/tour_title"
@@ -27,18 +27,38 @@
 
     <TextView
         android:id="@+id/tour_reviews_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
         android:text="@string/tour_reviews_label"
-        android:layout_marginTop="@dimen/tour_margin"
-        app:layout_constraintTop_toBottomOf="@+id/tour_abstract"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tour_abstract" />
+
+    <TextView
+        android:id="@+id/tour_reviews_sort"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/tour_reviews_sort_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tour_reviews_label" />
+
+    <Spinner
+        android:id="@+id/tour_reviews_sort_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tour_reviews_sort"
+        app:layout_constraintTop_toBottomOf="@+id/tour_reviews_label" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tour_reviews_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/review_item_margin"
-        app:layout_constraintTop_toBottomOf="@+id/tour_reviews_label" />
+        android:layout_marginTop="@dimen/small_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tour_reviews_sort" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

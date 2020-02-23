@@ -3,11 +3,10 @@
     <dimen name="info_text_size">14sp</dimen>
     <dimen name="info_text_small_size">12sp</dimen>
     <dimen name="content_text_size">16sp</dimen>
-
-    <dimen name="review_item_padding">10dp</dimen>
-    <dimen name="review_item_margin">10dp</dimen>
     <dimen name="review_item_photo_size">48dp</dimen>
 
-    <dimen name="tour_margin">16dp</dimen>
-    <dimen name="tour_padding">16dp</dimen>
+    <dimen name="small_padding">10dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="large_padding">16dp</dimen>
 </resources>

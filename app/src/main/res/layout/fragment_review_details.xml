@@ -8,14 +8,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/tour_padding">
+        android:padding="@dimen/large_padding">
 
         <TextView
             android:id="@+id/review_item_date"
             style="@style/InfoText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/review_item_padding"
+            android:paddingBottom="@dimen/small_padding"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/review_item_demo_date" />
 
@@ -33,7 +33,7 @@
             android:id="@+id/review_item_author_photo"
             android:layout_width="@dimen/review_item_photo_size"
             android:layout_height="@dimen/review_item_photo_size"
-            android:paddingBottom="@dimen/review_item_padding"
+            android:paddingBottom="@dimen/small_padding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/review_item_date" />
 
@@ -56,8 +56,8 @@
             style="@style/InfoTextHighlightSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/review_item_padding"
-            android:paddingEnd="@dimen/review_item_padding"
+            android:paddingStart="@dimen/small_padding"
+            android:paddingEnd="@dimen/small_padding"
             android:text="@string/review_item_author_label"
             app:layout_constraintBottom_toTopOf="@+id/review_item_author_info"
             app:layout_constraintStart_toEndOf="@+id/review_item_photo_barrier_end"
@@ -68,8 +68,8 @@
             style="@style/InfoTextHighlightLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/review_item_padding"
-            android:paddingEnd="@dimen/review_item_padding"
+            android:paddingStart="@dimen/small_padding"
+            android:paddingEnd="@dimen/small_padding"
             app:layout_constraintBottom_toTopOf="@+id/review_item_rating"
             app:layout_constraintStart_toEndOf="@+id/review_item_photo_barrier_end"
             app:layout_constraintTop_toBottomOf="@+id/review_item_author_label"
@@ -82,8 +82,8 @@
             android:layout_height="wrap_content"
             android:isIndicator="true"
             android:numStars="5"
-            android:paddingTop="@dimen/review_item_padding"
-            android:paddingBottom="@dimen/review_item_padding"
+            android:paddingTop="@dimen/small_padding"
+            android:paddingBottom="@dimen/small_padding"
             android:stepSize="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/review_item_photo_barrier_bottom" />
@@ -92,8 +92,8 @@
             android:id="@+id/review_item_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/review_item_margin"
-            android:layout_marginBottom="@dimen/review_item_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
             android:background="@color/colorInfo"
             app:layout_constraintBottom_toTopOf="@+id/review_item_text_label"
             app:layout_constraintTop_toBottomOf="@+id/review_item_rating" />
@@ -103,7 +103,7 @@
             style="@style/InfoText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/review_item_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:text="@string/review_item_text_label"
             app:layout_constraintTop_toBottomOf="@+id/review_item_rating" />
 
@@ -112,7 +112,7 @@
             style="@style/ContentText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/review_item_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:justificationMode="inter_word"
             app:layout_constraintTop_toBottomOf="@+id/review_item_text_label"
             tools:targetApi="o"

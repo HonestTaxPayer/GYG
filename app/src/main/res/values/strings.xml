@@ -5,6 +5,14 @@
     <string name="tour_title">Tour Info</string>
     <string name="tour_details_title">Tour Details</string>
     <string name="tour_reviews_label">Reviews</string>
+    <string name="tour_reviews_sort_label">Sort by:</string>
+
+    <string-array name="sort_options">
+        <item>Date - Descending</item>
+        <item>Date - Ascending</item>
+        <item>Rating - Descending</item>
+        <item>Rating - Ascending</item>
+    </string-array>
 
     <!-- Demo Strings -->
     <string name="tour_demo_name">Berlin Tempelhof Airport: The Legend of Tempelhof</string>

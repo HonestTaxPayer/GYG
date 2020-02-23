@@ -2,6 +2,8 @@ package gyg.reviews.presentation
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -21,18 +23,37 @@ class ReviewsListFragment : Fragment(R.layout.fragment_review_list), OnReviewCli
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(R.string.tour_title)
-        val model: ReviewsViewModel by viewModel()
+        val viewModel: ReviewsViewModel by viewModel()
         val reviewsList = view.tour_reviews_list
+        val sortSpinner = view.tour_reviews_sort_spinner
         val adapter = ReviewsListAdapter(this)
         val layoutManager = LinearLayoutManager(requireContext())
-        val dividerItemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
+        val dividerItemDecoration =
+            DividerItemDecoration(requireContext(), layoutManager.orientation)
 
         reviewsList.layoutManager = layoutManager
         reviewsList.addItemDecoration(dividerItemDecoration)
         reviewsList.adapter = adapter
-        model.reviewsLiveData.observe(this, Observer<PagedList<ReviewEntity>> { reviews ->
+        viewModel.reviewsLiveData.observe(this, Observer<PagedList<ReviewEntity>> { reviews ->
             adapter.submitList(reviews)
         })
+
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.sort_options,
+            R.layout.sort_option
+        ).also { sortAdapter ->
+            sortAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            sortSpinner.adapter = sortAdapter
+        }
+        sortSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+                viewModel.onSortOptionChanged(pos)
+            }
+        }
     }
 
     override fun onReviewClicked(reviewEntity: ReviewEntity) {

@@ -14,12 +14,15 @@ class ReviewsDataSourceFactory(
     DataSource.Factory<Int, ReviewResponse>() {
 
     private var reviewsParams = initialReviewParams
+    private var reviewsDataSource = ReviewsDataSource(retrofit, reviewsParams, coroutineContext)
 
     override fun create(): DataSource<Int, ReviewResponse> {
-        return ReviewsDataSource(retrofit, reviewsParams, coroutineContext)
+        reviewsDataSource = ReviewsDataSource(retrofit, reviewsParams, coroutineContext)
+        return reviewsDataSource
     }
 
     fun setReviewsParams(reviewsParams: ReviewsParams) {
         this.reviewsParams = reviewsParams
+        reviewsDataSource.invalidate()
     }
 }

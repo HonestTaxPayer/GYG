@@ -9,8 +9,8 @@
         android:id="@+id/review_item_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/review_item_padding"
-        android:paddingTop="@dimen/review_item_padding"
+        android:paddingBottom="@dimen/small_padding"
+        android:paddingTop="@dimen/small_padding"
         style="@style/InfoText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:isIndicator="true"
         android:numStars="5"
-        android:paddingBottom="@dimen/review_item_padding"
+        android:paddingBottom="@dimen/small_padding"
         android:stepSize="0.1"
         app:layout_constraintTop_toBottomOf="@+id/review_item_date" />
 
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:maxLines="2"
         style="@style/ContentText"
-        android:paddingBottom="@dimen/review_item_padding"
+        android:paddingBottom="@dimen/small_padding"
         android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@+id/review_item_rating"
         tools:text="@string/review_item_demo_text"/>
