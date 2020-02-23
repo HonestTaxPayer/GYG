@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GYG Reviews</string>
+    <string name="review_item_author_label">reviewed by</string>
+    <string name="review_item_text_label">Details</string>
+    <string name="tour_title">Tour Info</string>
+    <string name="tour_details_title">Tour Details</string>
+    <string name="tour_reviews_label">Reviews</string>
+
+    <!-- Demo Strings -->
+    <string name="tour_demo_name">Berlin Tempelhof Airport: The Legend of Tempelhof</string>
+    <string name="tour_demo_abstract">Embark on a 2-hour tour of the historic Berlin-Tempelhof airport building with explanations about its peculiar history and architecture. Have a look at the remnants of Nazi architecture, and discover the importance of Tempelhof throughout history.</string>
+    <string name="review_item_author_demo_info">Maureen(single) - United Kingdom</string>
+    <string name="review_item_demo_date">Saturday, January 11, 2020</string>
+    <string name="review_item_demo_text">Isabelle was a fantastic tour guide and was a wealth of interesting knowledge, and spoke nearly flawless English. The tour started promptly at 1:30 and went about 15 minutes past the 2-hour mark. Learned so many interesting factoids today!</string>
+</resources>
