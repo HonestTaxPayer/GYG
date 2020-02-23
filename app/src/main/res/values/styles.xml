@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="InfoText">
+        <item name="android:textColor">@color/colorInfoDark</item>
+        <item name="android:textSize">@dimen/info_text_size</item>
+        <item name="android:fontFamily">@font/gyg_regular</item>
+    </style>
+
+    <style name="ContentText">
+        <item name="android:textColor">@color/colorContent</item>
+        <item name="android:textSize">@dimen/content_text_size</item>
+        <item name="android:fontFamily">@font/gyg_regular</item>
+    </style>
+
+    <style name="InfoTextHighlightLarge">
+        <item name="android:textColor">@color/colorInfoDark</item>
+        <item name="android:textSize">@dimen/info_text_size</item>
+        <item name="android:fontFamily">@font/gyg_medium</item>
+    </style>
+
+    <style name="InfoTextHighlightSmall">
+        <item name="android:textColor">@color/colorInfoDark</item>
+        <item name="android:textSize">@dimen/info_text_small_size</item>
+        <item name="android:fontFamily">@font/gyg_medium</item>
+    </style>
+
+
+</resources>
