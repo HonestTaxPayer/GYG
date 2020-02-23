@@ -1,5 +1,6 @@
 package gyg.reviews.presentation
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
@@ -26,7 +27,8 @@ class ReviewsViewModel(private val getReviewsUseCase: GetReviewsUseCase) : ViewM
         getReviews(ReviewsParams(tourId = TOUR_ID))
     }
 
-    private fun getReviews(params: ReviewsParams) {
+    @VisibleForTesting
+    internal fun getReviews(params: ReviewsParams) {
         _reviewsLiveData = LivePagedListBuilder(getReviewsUseCase.execute(params), config).build()
     }
 

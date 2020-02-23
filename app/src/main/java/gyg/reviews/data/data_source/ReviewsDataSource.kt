@@ -9,16 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
-import kotlin.coroutines.CoroutineContext
 
 class ReviewsDataSource(
     private val retrofit: Retrofit,
     private val reviewsParams: ReviewsParams,
-    coroutineContext: CoroutineContext
+    private val coroutineScope: CoroutineScope
 ) :
     PageKeyedDataSource<Int, ReviewResponse>() {
-
-    private val coroutineScope = CoroutineScope(coroutineContext)
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
