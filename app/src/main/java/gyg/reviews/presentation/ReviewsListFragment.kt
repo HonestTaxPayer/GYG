@@ -20,10 +20,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ReviewsListFragment : Fragment(R.layout.fragment_review_list), OnReviewClickedListener {
 
+    private val viewModel: ReviewsViewModel by viewModel()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(R.string.tour_title)
-        val viewModel: ReviewsViewModel by viewModel()
         val reviewsList = view.tour_reviews_list
         val sortSpinner = view.tour_reviews_sort_spinner
         val adapter = ReviewsListAdapter(this)
@@ -51,7 +52,9 @@ class ReviewsListFragment : Fragment(R.layout.fragment_review_list), OnReviewCli
             }
 
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-                viewModel.onSortOptionChanged(pos)
+                view?.let {
+                    viewModel.onSortOptionChanged(pos)
+                }
             }
         }
     }
