@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "gyg.reviews"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions { jvmTarget = "1.8" }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.appCompat
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.recyclerView
+    implementation appDependencies.retrofit
+    implementation appDependencies.retrofitConverter
+    implementation appDependencies.glide
+    implementation appDependencies.paging
+    implementation appDependencies.material
+    implementation appDependencies.timber
+    implementation appDependencies.lifecycle
+    implementation appDependencies.lifecycleViewModel
+    implementation appDependencies.koin
+    implementation appDependencies.koinViewModel
+    implementation appDependencies.koinScope
+    implementation appDependencies.navigationUi
+    implementation appDependencies.navigationFragment
+    implementation appDependencies.circleImageView
+    implementation appDependencies.networkLogger
+
+    annotationProcessor appDependencies.glideCompiler
+    annotationProcessor appDependencies.annotations
+
+    //test dependencies
+    testImplementation appDependencies.jUnit
+    testImplementation appDependencies.mockk
+    androidTestImplementation appDependencies.testRunner
+    androidTestImplementation appDependencies.espressoCore
+}
